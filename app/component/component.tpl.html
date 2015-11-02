@@ -1,0 +1,56 @@
+<script type ="text/ng-template" id="sanji-navbar.tpl.html">
+  <md-toolbar>
+    <div class="md-toolbar-tools">
+      <md-button class="md-icon-button" aria-label="Settings"
+      ng-click="vm.toggleSidebarCallback()">
+        <ng-md-icon icon="menu" ng-attr-style="fill: #5e5e5e"></ng-md-icon>
+      </md-button>
+      <div class="logo-wrap">
+        <img ng-src="{{vm.data.config.logo.url}}"
+        width="{{vm.data.config.logo.width}}"
+        height="{{vm.data.config.logo.height}}">
+      </div>
+      <span class="md-subhead" ng-bind="vm.data.config.modelName"></span>
+      <span flex></span>
+      <img src="http://lorempixel.com/40/40/" class="avatar" alt="">
+      <md-menu md-offset="0 59" md-position-mode="target-right target">
+        <md-button class="capitalize md-button" aria-label="Account"
+        ng-click="$mdOpenMenu($event)">
+          <span>Zack Yang</span>
+          <ng-md-icon icon="arrow_drop_down" ng-attr-style="fill: #5e5e5e"></ng-md-icon>
+        </md-button>
+        <md-menu-content width="2">
+          <md-menu-item>
+            <md-button ng-click="vm.toProfileCallback()">
+              <ng-md-icon icon="account_circle" ng-attr-style="fill: #5e5e5e"></ng-md-icon>
+              Profile
+            </md-button>
+          </md-menu-item>
+          <md-menu-item>
+            <md-button ng-click="vm.logoutCallback()">
+              <ng-md-icon icon="logout" ng-attr-style="fill: #5e5e5e"></ng-md-icon>
+              Logout
+            </md-button>
+          </md-menu-item>
+        </md-menu-content>
+      </md-menu>
+      <md-menu md-offset="0 64" md-position-mode="target-right target">
+        <md-button class="md-icon-button" aria-label="Language"
+        ng-click="$mdOpenMenu($event)">
+          <ng-md-icon icon="language" ng-attr-style="fill: #5e5e5e"></ng-md-icon>
+        </md-button>
+        <md-menu-content width="2">
+          <md-menu-item ng-repeat="item in vm.data.lang track by $index">
+            <md-button ng-click="vm.changeLang(item)" ng-bind="item.label"></md-button>
+          </md-menu-item>
+        </md-menu-content>
+      </md-menu>
+      <md-button class="md-icon-button" aria-label="Notification"
+      ng-click="vm.toggleNotificationCallback()">
+        <ng-md-icon icon="notifications_none" ng-attr-style="fill: #5e5e5e"></ng-md-icon>
+        <span class="notification-label" ng-if="0 < vm.unreadCount"
+          ng-bind="9 < vm.unreadCount ? '9+' : vm.unreadCount"></span>
+      </md-button>
+    </div>
+  </md-toolbar>
+</script>
