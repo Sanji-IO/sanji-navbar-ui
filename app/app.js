@@ -15,6 +15,12 @@ class AppController {
     this.toggleLeft = false;
     this.toggleRight = false;
     this.unreadCount = 10;
+    this.config = {
+      logo: {
+        url: 'https://angularjs.org/img/AngularJS-large.png',
+        height: 18
+      }
+    };
   }
 
   onToggleSidebar() {

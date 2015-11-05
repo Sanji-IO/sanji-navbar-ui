@@ -10,7 +10,8 @@ class NavbarService {
     this.currentLang = this.$translate.use();
   }
 
-  get() {
+  get(options) {
+    Object.assign(this.data.config, options)
     return this.data;
   }
 

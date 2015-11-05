@@ -15,7 +15,8 @@ class NavbarContainerDirective {
       toggleNotificationCallback: '&onToggleNotification',
       logoutCallback: '&onLogout',
       toProfileCallback: '&toProfile',
-      unreadCount: '='
+      unreadCount: '=',
+      options: '='
     };
     this.template = `<sanji-navbar data="vm.data"
                     toggle-sidebar-callback="vm.toggleSidebarCallback()"

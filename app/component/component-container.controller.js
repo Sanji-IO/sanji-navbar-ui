@@ -5,7 +5,7 @@ class NavbarContainerController {
 
     let navbarService = this.navbarService;
 
-    this.data = navbarService.data;
+    this.data = navbarService.get(this.options);
   }
 }
 NavbarContainerController.$inject = $inject;
