@@ -9,17 +9,17 @@
         <ng-md-icon icon="menu"></ng-md-icon>
       </md-button>
       <div class="logo-wrap">
-        <img ng-src="{{vm.data.config.logo.url}}"
-        width="{{vm.data.config.logo.width}}"
-        height="{{vm.data.config.logo.height}}">
+        <img ng-src="{{::vm.data.config.logo.url}}"
+        width="{{::vm.data.config.logo.width}}"
+        height="{{::vm.data.config.logo.height}}">
       </div>
       <span class="md-subhead" ng-bind="vm.data.config.modelName"></span>
       <span flex></span>
-      <img src="http://lorempixel.com/40/40/" class="avatar" alt="">
+      <img ng-src="{{vm.user.avatar}}" class="avatar" alt="{{vm.user.name}}">
       <md-menu md-offset="0 59" md-position-mode="target-right target">
         <md-button class="capitalize md-button" aria-label="Account"
         ng-click="$mdOpenMenu($event)">
-          <span>Zack Yang</span>
+          <span ng-bind="vm.user.name"></span>
           <ng-md-icon icon="arrow_drop_down"></ng-md-icon>
         </md-button>
         <md-menu-content width="2">

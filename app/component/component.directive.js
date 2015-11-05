@@ -17,6 +17,7 @@ class NavbarDirective {
       toggleNotificationCallback: '&',
       logoutCallback: '&',
       toProfileCallback: '&',
+      user: '=',
       unreadCount: '='
     };
   }

@@ -16,6 +16,7 @@ class NavbarContainerDirective {
       logoutCallback: '&onLogout',
       toProfileCallback: '&toProfile',
       unreadCount: '=',
+      user: '=',
       options: '='
     };
     this.template = `<sanji-navbar data="vm.data"
@@ -23,7 +24,8 @@ class NavbarContainerDirective {
                     toggle-notification-callback="vm.toggleNotificationCallback()"
                     logout-callback="vm.logoutCallback()"
                     to-profile-callback="vm.toProfileCallback()"
-                    unread-count="vm.unreadCount"></sanji-navbar>`;
+                    unread-count="vm.unreadCount"
+                    user="vm.user"></sanji-navbar>`;
   }
 
   static directiveFactory(...injects) {

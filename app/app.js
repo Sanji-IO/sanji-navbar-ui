@@ -15,6 +15,11 @@ class AppController {
     this.toggleLeft = false;
     this.toggleRight = false;
     this.unreadCount = 10;
+    this.user = {
+      name: 'zack yang',
+      email: 'zackcf.yang@moxa.com',
+      avatar: 'http://lorempixel.com/64/64/'
+    };
     this.config = {
       logo: {
         url: 'https://angularjs.org/img/AngularJS-large.png',
