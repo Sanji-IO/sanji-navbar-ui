@@ -17,8 +17,7 @@ class AppController {
     this.unreadCount = 10;
     this.user = {
       name: 'zack yang',
-      email: 'zackcf.yang@moxa.com',
-      avatar: 'http://lorempixel.com/64/64/'
+      email: 'zackcf.yang@moxa.com'
     };
     this.config = {
       logo: {

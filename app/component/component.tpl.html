@@ -15,7 +15,7 @@
       </div>
       <span class="md-subhead" ng-bind="vm.data.config.modelName"></span>
       <span flex></span>
-      <img ng-src="{{vm.user.avatar}}" class="avatar" alt="{{vm.user.name}}">
+      <ng-letter-avatar data="{{vm.user.name}}" shape="round" width="40" height="40"></ng-letter-avatar>
       <md-menu md-offset="0 59" md-position-mode="target-right target">
         <md-button class="capitalize md-button" aria-label="Account"
         ng-click="$mdOpenMenu($event)">
