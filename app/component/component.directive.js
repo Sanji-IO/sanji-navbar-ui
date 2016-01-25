@@ -15,6 +15,7 @@ class NavbarDirective {
       data: '=',
       toggleSidebarCallback: '&',
       toggleNotificationCallback: '&',
+      toggleControlPanelCallback: '&',
       logoutCallback: '&',
       toProfileCallback: '&',
       user: '=',

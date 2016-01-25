@@ -13,6 +13,7 @@ class NavbarContainerDirective {
     this.bindToController = {
       toggleSidebarCallback: '&onToggleSidebar',
       toggleNotificationCallback: '&onToggleNotification',
+      toggleControlPanelCallback: '&onToggleControlPanel',
       logoutCallback: '&onLogout',
       toProfileCallback: '&toProfile',
       unreadCount: '=',
@@ -22,6 +23,7 @@ class NavbarContainerDirective {
     this.template = `<sanji-navbar data="vm.data"
                     toggle-sidebar-callback="vm.toggleSidebarCallback()"
                     toggle-notification-callback="vm.toggleNotificationCallback()"
+                    toggle-control-panel-callback="vm.toggleControlPanelCallback()"
                     logout-callback="vm.logoutCallback()"
                     to-profile-callback="vm.toProfileCallback()"
                     unread-count="vm.unreadCount"

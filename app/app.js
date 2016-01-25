@@ -37,6 +37,11 @@ class AppController {
     this.logger.info('User toggle notification.', this.toggleRight);
   }
 
+  onToggleControlPanel() {
+    this.$rootScope.$broadcast('sj:on-toggle-control-panel');
+    this.logger.info('User toggle control panel.');
+  }
+
   toProfilePage() {
     this.logger.info('User want to show profile page.');
   }

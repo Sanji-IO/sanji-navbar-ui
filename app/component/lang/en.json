@@ -3,6 +3,7 @@
   "NAVBAR_TOOLTIP_MENU": "Menu",
   "NAVBAR_TOOLTIP_I18N": "Multi-language",
   "NAVBAR_TOOLTIP_NOTIFICATION": "Notification",
+  "NAVBAR_TOOLTIP_CONTROL_PANEL": "Control Panel",
   "NAVBAR_PROFILE": "Profile",
   "NAVBAR_LOGOUT": "Logout"
 }

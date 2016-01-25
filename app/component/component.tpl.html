@@ -52,6 +52,13 @@
           </md-menu-item>
         </md-menu-content>
       </md-menu>
+      <md-button class="md-icon-button" aria-label="Control Service"
+      ng-click="vm.toggleControlPanelCallback()">
+        <md-tooltip>
+          <span translate="NAVBAR_TOOLTIP_CONTROL_PANEL"></span>
+        </md-tooltip>
+        <ng-md-icon icon="settings"></ng-md-icon>
+      </md-button>
       <md-button class="md-icon-button" aria-label="Notification"
       ng-click="vm.toggleNotificationCallback()">
         <md-tooltip>
