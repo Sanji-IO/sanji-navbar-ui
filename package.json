@@ -23,8 +23,8 @@
     "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
   "devDependencies": {
-    "angular-mocks": "~1.4.8",
-    "autoprefixer-loader": "~3.1.0",
+    "angular-mocks": "~1.4.9",
+    "autoprefixer-loader": "~3.2.0",
     "babel-core": "~5.8.34",
     "babel-eslint": "~4.1.6",
     "babel-loader": "~5.3.3",
@@ -79,11 +79,12 @@
   "homepage": "https://github.com/Sanji-IO/sanji-navbar-ui",
   "dependencies": {
     "jquery": "~2.2.0",
-    "angular": "~1.4.8",
-    "angular-material": "~1.0.1",
+    "angular": "~1.4.9",
+    "angular-material": "~1.0.5",
+    "angular-material-data-table": "~0.9.9",
     "angular-material-icons": "~0.6.0",
-    "sanji-core-ui": "~1.11.0",
-    "socket.io-client": "~1.4.4",
+    "sanji-core-ui": "~1.11.5",
+    "socket.io-client": "~1.4.5",
     "svg-morpheus": "alexk111/SVG-Morpheus#v0.1.8",
     "toastr": "~2.1.2"
   }
