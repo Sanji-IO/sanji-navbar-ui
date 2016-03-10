@@ -2,6 +2,7 @@
   <md-toolbar>
     <div class="md-toolbar-tools">
       <md-button class="md-icon-button" aria-label="Menu"
+      ng-if="vm.data.config.isShowMenu"
       ng-click="vm.toggleSidebarCallback()">
         <md-tooltip>
           <span translate="NAVBAR_TOOLTIP_MENU"></span>
@@ -13,10 +14,13 @@
         width="{{::vm.data.config.logo.width}}"
         height="{{::vm.data.config.logo.height}}">
       </div>
-      <span class="md-subhead" ng-bind="vm.data.config.modelName"></span>
+      <span class="md-subhead" ng-if="vm.data.config.modelName" ng-bind="vm.data.config.modelName"></span>
       <span flex></span>
-      <ng-letter-avatar data="{{vm.user.name}}" shape="round" width="40" height="40"></ng-letter-avatar>
-      <md-menu md-offset="0 59" md-position-mode="target-right target">
+      <ng-letter-avatar ng-if="vm.data.config.isShowAccount"
+      data="{{vm.user.name}}"
+      shape="round" width="40" height="40"></ng-letter-avatar>
+      <md-menu ng-if="vm.data.config.isShowAccount"
+        md-offset="0 59" md-position-mode="target-right target">
         <md-button class="capitalize md-button" aria-label="Account"
         ng-click="$mdOpenMenu($event)">
           <span ng-bind="vm.user.name"></span>
@@ -53,6 +57,7 @@
         </md-menu-content>
       </md-menu>
       <md-button class="md-icon-button" aria-label="Control Service"
+      ng-if="vm.data.config.isShowControlPanel"
       ng-click="vm.toggleControlPanelCallback()">
         <md-tooltip>
           <span translate="NAVBAR_TOOLTIP_CONTROL_PANEL"></span>
@@ -60,6 +65,7 @@
         <ng-md-icon icon="settings"></ng-md-icon>
       </md-button>
       <md-button class="md-icon-button" aria-label="Notification"
+      ng-if="vm.data.config.isShowNotification"
       ng-click="vm.toggleNotificationCallback()">
         <md-tooltip>
           <span translate="NAVBAR_TOOLTIP_NOTIFICATION"></span>
