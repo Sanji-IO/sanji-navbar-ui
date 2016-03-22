@@ -1,7 +1,8 @@
 import 'angular-material.css';
-import 'toastr.scss';
+import 'angular-material-icons.css';
+import 'toastr.css';
 import './app.scss';
-import 'angular';
+import angular from 'angular';
 import component from './component';
 
 let app = angular.module('webapp', [component]);

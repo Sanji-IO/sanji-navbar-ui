@@ -19,8 +19,7 @@ var config = {
       'angular-material.css': nodeRoot + '/angular-material/angular-material.css',
       'angular-material-icons.css': nodeRoot + '/angular-material-icons/angular-material-icons.css',
       'angular-material-data-table.css': nodeRoot + '/angular-material-data-table/dist/md-data-table.css',
-      'toastr.scss': nodeRoot + '/toastr/toastr.scss',
-      'svg-morpheus': nodeRoot + '/svg-morpheus/compile/unminified/svg-morpheus.js'
+      'toastr.css': nodeRoot + '/toastr/build/toastr.css'
     },
     extensions: ['', '.js', '.json', 'html', 'scss', 'css']
   },
@@ -29,25 +28,9 @@ var config = {
       {test: /\.js$/, loader: "eslint", exclude: /(node_modules)/}
     ],
     loaders: [
-      {test: /\.js$/, loader: 'ng-annotate!babel', exclude: /(node_modules)/},
-      {
-        test: /\.js$/,
-        loader: 'babel?optional[]=runtime&stage=0',
-        include: [
-          /(angular-sanji-window)/,
-          /(sanji-core-ui)/
-        ]
-      },
-      { test: /\.json$/, loader: 'json', exclude: /node_modules\/(?!sanji-core-ui)/ },
-      {
-        test: /\.html$/,
-        loader: 'ng-cache?prefix=[dir]/[dir]',
-        include: [
-          /(angular-sanji-window)/,
-          /(sanji-core-ui)/
-        ]
-      },
-      {test: /\.html$/, loader: 'ng-cache?prefix=[dir]/[dir]', exclude: /(node_modules)/}
+      { test: /\.js$/, loader: 'ng-annotate!babel', exclude: /node_modules/ },
+      { test: /\.json$/, loader: 'json', exclude: /node_modules/ },
+      { test: /\.html$/, loader: 'ng-cache?prefix=[dir]/[dir]', exclude: /node_modules/ }
     ],
     noParse: []
   },

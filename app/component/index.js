@@ -1,3 +1,4 @@
+import angulr from 'angular';
 import sjCore from 'sanji-core-ui';
 
 import './component.tpl.html';
