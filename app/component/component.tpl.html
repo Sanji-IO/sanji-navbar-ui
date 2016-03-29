@@ -10,9 +10,11 @@
         <ng-md-icon icon="menu"></ng-md-icon>
       </md-button>
       <div class="logo-wrap">
-        <img ng-src="{{::vm.data.config.logo.url}}"
-        width="{{::vm.data.config.logo.width}}"
-        height="{{::vm.data.config.logo.height}}">
+        <a href="/">
+          <img ng-src="{{::vm.data.config.logo.url}}"
+          width="{{::vm.data.config.logo.width}}"
+          height="{{::vm.data.config.logo.height}}">
+        </a>
       </div>
       <span class="md-subhead" ng-if="vm.data.config.modelName" ng-bind="vm.data.config.modelName"></span>
       <span flex></span>
