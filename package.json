@@ -2,7 +2,7 @@
   "name": "sanji-navbar-ui",
   "author": "Zack Yang <zack9433@gmail.com> (https://github.com/zack9433)",
   "main": "index",
-  "version": "1.4.2",
+  "version": "1.4.3",
   "description": "Sanji Navbar UI",
   "config": {
     "ghooks": {
