@@ -56,3 +56,7 @@ class AppController {
   }
 }
 app.controller('AppController', AppController);
+
+angular.element(document).ready(() => {
+  angular.bootstrap(document.body, ['webapp']);
+});

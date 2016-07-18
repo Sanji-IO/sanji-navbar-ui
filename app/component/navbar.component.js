@@ -1,3 +1,5 @@
+import NavbarController from './navbar.controller';
+
 const NavbarComponent = {
   bindings: {
     data: '<',
@@ -9,7 +11,7 @@ const NavbarComponent = {
     toProfileCallback: '&'
   },
   templateUrl: 'sanji-navbar.tpl.html',
-  controller: 'NavbarController',
+  controller: NavbarController,
   controllerAs: 'vm'
 };
 export default NavbarComponent;

@@ -1,3 +1,5 @@
+import NavbarContainerController from './container.controller';
+
 const NavbarContainerComponent = {
   bindings: {
     toggleSidebarCallback: '&onToggleSidebar',
@@ -17,7 +19,7 @@ const NavbarContainerComponent = {
               to-profile-callback="vm.toProfileCallback()"
               unread-count="vm.unreadCount"
               user="vm.user"></sanji-navbar>`,
-  controller: 'NavbarContainerController',
+  controller: NavbarContainerController,
   controllerAs: 'vm'
 };
 export default NavbarContainerComponent;
