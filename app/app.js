@@ -3,9 +3,9 @@ import 'angular-material-icons.css';
 import 'toastr.css';
 import './app.scss';
 import angular from 'angular';
-import component from './component';
+import {sjNavbar} from './component';
 
-let app = angular.module('webapp', [component]);
+const app = angular.module('webapp', [sjNavbar]);
 app.config(restProvider => {
   restProvider.configure({basePath: '/api/v1'});
 });

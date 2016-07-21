@@ -1,5 +1,5 @@
 import angular from 'angular';
-import sjCore from 'sanji-core-ui';
+import {sjCore} from 'sanji-core-ui';
 
 import './navbar.tpl.html';
 import './navbar.style.scss';
@@ -8,9 +8,10 @@ import NavbarService from './navbar.service';
 import NavbarContainerComponent from './container.component';
 import NavbarComponent from './navbar.component';
 
-let app = angular.module('sanji.navbar', [sjCore]);
-app.config(i18nConfig);
-app.service('navbarService', NavbarService);
-app.component('sanjiNavbarContainer', NavbarContainerComponent);
-app.component('sanjiNavbar', NavbarComponent);
-export default app = app.name;
+const sjNavbar = angular.module('sanji.navbar', [sjCore])
+  .config(i18nConfig)
+  .service('navbarService', NavbarService)
+  .component('sanjiNavbarContainer', NavbarContainerComponent)
+  .component('sanjiNavbar', NavbarComponent)
+  .name;
+export {sjNavbar};

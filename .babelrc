@@ -1,6 +1,6 @@
 {
-  "presets": ["es2015-webpack"],
-  "plugins": ["lodash", "transform-runtime"],
+  "presets": ["es2015"],
+  "plugins": ["lodash"],
   "env": {
     "test": {
       "plugins": [
