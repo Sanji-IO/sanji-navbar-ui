@@ -1,3 +1,3 @@
-import component from './app/component';
+import {sjNavbar} from './app/component';
 
-export default component;
+export {sjNavbar};
