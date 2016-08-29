@@ -1,11 +1,12 @@
 'use strict';
 
-var path = require('path');
-var webpack = require('webpack');
-var NODE_ENV = process.env.NODE_ENV;
-var nodeRoot = path.join(__dirname, 'node_modules');
-var appRoot = path.join(__dirname, 'app');
-var config = {
+const path = require('path');
+const webpack = require('webpack');
+const ProgressBarPlugin = require('progress-bar-webpack-plugin');
+const NODE_ENV = process.env.NODE_ENV;
+const nodeRoot = path.join(__dirname, 'node_modules');
+const appRoot = path.join(__dirname, 'app');
+const config = {
   context: appRoot,
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -35,6 +36,7 @@ var config = {
     noParse: []
   },
   plugins: [
+    new ProgressBarPlugin(),
     new webpack.DefinePlugin({
       __TEST__: 'test' === NODE_ENV,
       __DEV__: 'development' === NODE_ENV,

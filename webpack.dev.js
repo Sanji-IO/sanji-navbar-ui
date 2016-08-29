@@ -1,11 +1,10 @@
 'use strict';
 
-var webpack = require('webpack');
-var autoprefixer = require('autoprefixer');
-var WebpackNotifierPlugin = require('webpack-notifier');
-var HtmlWebpackPlugin = require('html-webpack-plugin');
-var bourbon = require('node-bourbon').includePaths;
-var config = require('./webpack.config.js');
+const webpack = require('webpack');
+const autoprefixer = require('autoprefixer');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const bourbon = require('node-bourbon').includePaths;
+const config = require('./webpack.config.js');
 
 config.ip = 'localhost';
 config.port = 8080;
@@ -33,7 +32,6 @@ config.postcss = [ autoprefixer({ browsers: ['last 2 versions'] }) ];
 
 config.plugins.push(
   new webpack.HotModuleReplacementPlugin(),
-  new WebpackNotifierPlugin({title: 'Webpack'}),
   new HtmlWebpackPlugin({
     template: 'index.html',
     hash: true
