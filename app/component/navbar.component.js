@@ -4,6 +4,7 @@ const NavbarComponent = {
   bindings: {
     data: '<',
     user: '<',
+    unreadCount: '<',
     toggleSidebarCallback: '&',
     toggleNotificationCallback: '&',
     toggleControlPanelCallback: '&',
