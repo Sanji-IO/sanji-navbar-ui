@@ -2,8 +2,8 @@
   <md-toolbar>
     <div class="md-toolbar-tools">
       <md-button class="md-icon-button" aria-label="Menu"
-      ng-if="vm.data.config.isShowMenu"
-      ng-click="vm.toggleSidebarCallback()">
+      ng-if="$ctrl.data.config.isShowMenu"
+      ng-click="$ctrl.toggleSidebarCallback()">
         <md-tooltip>
           <span translate="NAVBAR_TOOLTIP_MENU"></span>
         </md-tooltip>
@@ -11,32 +11,32 @@
       </md-button>
       <div class="logo-wrap">
         <a href="/">
-          <img ng-src="{{::vm.data.config.logo.url}}"
-          width="{{::vm.data.config.logo.width}}"
-          height="{{::vm.data.config.logo.height}}">
+          <img ng-src="{{::$ctrl.data.config.logo.url}}"
+          width="{{::$ctrl.data.config.logo.width}}"
+          height="{{::$ctrl.data.config.logo.height}}">
         </a>
       </div>
-      <span class="md-subhead" ng-if="vm.data.config.modelName" ng-bind="vm.data.config.modelName"></span>
+      <span class="md-subhead" ng-if="$ctrl.data.config.modelName" ng-bind="$ctrl.data.config.modelName"></span>
       <span flex></span>
-      <ng-letter-avatar ng-if="vm.data.config.isShowAccount"
-      data="{{vm.user.name}}" dynamic="true"
+      <ng-letter-avatar ng-if="$ctrl.data.config.isShowAccount"
+      data="{{$ctrl.user.name}}" dynamic="true"
       shape="round" width="40" height="40"></ng-letter-avatar>
-      <md-menu ng-if="vm.data.config.isShowAccount"
+      <md-menu ng-if="$ctrl.data.config.isShowAccount"
         md-offset="0 59" md-position-mode="target-right target">
         <md-button class="capitalize md-button" aria-label="Account"
         ng-click="$mdOpenMenu($event)">
-          <span ng-bind="vm.user.name"></span>
+          <span ng-bind="$ctrl.user.name"></span>
           <ng-md-icon icon="arrow_drop_down"></ng-md-icon>
         </md-button>
         <md-menu-content width="2">
           <md-menu-item>
-            <md-button aria-label="Link to profile" ng-click="vm.toProfileCallback()">
+            <md-button aria-label="Link to profile" ng-click="$ctrl.toProfileCallback()">
               <ng-md-icon icon="account_circle"></ng-md-icon>
               <span translate="NAVBAR_PROFILE"></span>
             </md-button>
           </md-menu-item>
           <md-menu-item>
-            <md-button aria-label="Link to logout" ng-click="vm.logoutCallback()">
+            <md-button aria-label="Link to logout" ng-click="$ctrl.logoutCallback()">
               <ng-md-icon icon="logout"></ng-md-icon>
               <span translate="NAVBAR_LOGOUT"></span>
             </md-button>
@@ -52,29 +52,29 @@
           <ng-md-icon icon="language"></ng-md-icon>
         </md-button>
         <md-menu-content width="2">
-          <md-menu-item ng-repeat="item in vm.data.lang track by $index">
+          <md-menu-item ng-repeat="item in $ctrl.data.lang track by $index">
             <md-button aria-label="{{::item.label}}"
-            ng-click="vm.changeLang(item)" ng-bind="::item.label"></md-button>
+            ng-click="$ctrl.changeLang(item)" ng-bind="::item.label"></md-button>
           </md-menu-item>
         </md-menu-content>
       </md-menu>
       <md-button class="md-icon-button" aria-label="Control Service"
-      ng-if="vm.data.config.isShowControlPanel"
-      ng-click="vm.toggleControlPanelCallback()">
+      ng-if="::($ctrl.data.config.isShowControlPanel && $ctrl.isAuthorized(['superadmin', 'admin']))"
+      ng-click="$ctrl.toggleControlPanelCallback()">
         <md-tooltip>
           <span translate="NAVBAR_TOOLTIP_CONTROL_PANEL"></span>
         </md-tooltip>
         <ng-md-icon icon="settings"></ng-md-icon>
       </md-button>
       <md-button class="md-icon-button" aria-label="Notification"
-      ng-if="vm.data.config.isShowNotification"
-      ng-click="vm.toggleNotificationCallback()">
+      ng-if="$ctrl.data.config.isShowNotification"
+      ng-click="$ctrl.toggleNotificationCallback()">
         <md-tooltip>
           <span translate="NAVBAR_TOOLTIP_NOTIFICATION"></span>
         </md-tooltip>
         <ng-md-icon icon="notifications_none"></ng-md-icon>
-        <span class="notification-label" ng-if="0 < vm.unreadCount"
-          ng-bind="9 < vm.unreadCount ? '9+' : vm.unreadCount"></span>
+        <span class="notification-label" ng-if="0 < $ctrl.unreadCount"
+          ng-bind="9 < $ctrl.unreadCount ? '9+' : $ctrl.unreadCount"></span>
       </md-button>
     </div>
   </md-toolbar>

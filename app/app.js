@@ -3,9 +3,10 @@ import 'angular-material-icons.css';
 import 'toastr.css';
 import './app.scss';
 import angular from 'angular';
+import {sjCore} from 'sanji-core-ui';
 import {sjNavbar} from './component';
 
-const app = angular.module('webapp', [sjNavbar]);
+const app = angular.module('webapp', [sjNavbar, sjCore]);
 app.config(restProvider => {
   restProvider.configure({basePath: '/api/v1'});
 });
@@ -55,6 +56,12 @@ class AppController {
     this.$translate.use(lang);
   }
 }
+app.run(session => {
+  session.create('token', 'test');
+  session.setUserData({
+    role: 'admin'
+  });
+});
 app.controller('AppController', AppController);
 
 angular.element(document).ready(() => {

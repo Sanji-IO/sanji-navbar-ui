@@ -1,5 +1,6 @@
-const $inject = ['LANG_KEYS', '$translate'];
-const config = require('./component.resource.json');
+import config from './component.resource.json';
+
+const $inject = ['LANG_KEYS', '$translate', 'auth'];
 class NavbarService {
   constructor(...injects) {
     NavbarService.$inject.forEach((item, index) => this[item] = injects[index]);
@@ -8,10 +9,13 @@ class NavbarService {
       lang: this.LANG_KEYS
     };
     this.currentLang = this.$translate.use();
+    this.isAuthorized = this.auth.isAuthorized;
   }
 
   get(options) {
-    Object.assign(this.data.config, options);
+    if (options) {
+      Object.assign(this.data.config, options);
+    }
     return this.data;
   }
 

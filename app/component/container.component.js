@@ -11,15 +11,15 @@ const NavbarContainerComponent = {
     user: '<',
     options: '<'
   },
-  template: `<sanji-navbar data="vm.data"
-              toggle-sidebar-callback="vm.toggleSidebarCallback()"
-              toggle-notification-callback="vm.toggleNotificationCallback()"
-              toggle-control-panel-callback="vm.toggleControlPanelCallback()"
-              logout-callback="vm.logoutCallback()"
-              to-profile-callback="vm.toProfileCallback()"
-              unread-count="vm.unreadCount"
-              user="vm.user"></sanji-navbar>`,
-  controller: NavbarContainerController,
-  controllerAs: 'vm'
+  template: `<sanji-navbar data="$ctrl.data"
+              on-authorized="$ctrl.isAuthorized($event)"
+              toggle-sidebar-callback="$ctrl.toggleSidebarCallback()"
+              toggle-notification-callback="$ctrl.toggleNotificationCallback()"
+              toggle-control-panel-callback="$ctrl.toggleControlPanelCallback()"
+              logout-callback="$ctrl.logoutCallback()"
+              to-profile-callback="$ctrl.toProfileCallback()"
+              unread-count="$ctrl.unreadCount"
+              user="$ctrl.user"></sanji-navbar>`,
+  controller: NavbarContainerController
 };
 export default NavbarContainerComponent;

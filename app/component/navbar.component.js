@@ -9,10 +9,10 @@ const NavbarComponent = {
     toggleNotificationCallback: '&',
     toggleControlPanelCallback: '&',
     logoutCallback: '&',
-    toProfileCallback: '&'
+    toProfileCallback: '&',
+    onAuthorized: '&'
   },
   templateUrl: 'sanji-navbar.tpl.html',
-  controller: NavbarController,
-  controllerAs: 'vm'
+  controller: NavbarController
 };
 export default NavbarComponent;
