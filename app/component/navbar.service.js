@@ -14,7 +14,7 @@ class NavbarService {
 
   get(options) {
     if (options) {
-      Object.assign(this.data.config, options);
+      this.data.config = Object.assign({}, this.data.config, options);
     }
     return this.data;
   }
