@@ -4,7 +4,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const bourbon = require('node-bourbon').includePaths;
 const config = require('./webpack.config.js');
 
-config.devtool = 'eval';
+config.devtool = 'cheap-module-eval-source-map';
 config.entry = {
   'sanji-ui': [
     'webpack/hot/dev-server',
