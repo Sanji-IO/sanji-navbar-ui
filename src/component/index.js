@@ -1,5 +1,4 @@
 import angular from 'angular';
-import {sjCore} from 'sanji-core-ui';
 
 import './navbar.tpl.html';
 import './navbar.style.scss';
@@ -8,7 +7,7 @@ import NavbarService from './navbar.service';
 import NavbarContainerComponent from './container.component';
 import NavbarComponent from './navbar.component';
 
-const sjNavbar = angular.module('sanji.navbar', [sjCore])
+const sjNavbar = angular.module('sanji.navbar', [])
   .config(i18nConfig)
   .service('navbarService', NavbarService)
   .component('sanjiNavbarContainer', NavbarContainerComponent)

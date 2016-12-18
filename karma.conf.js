@@ -35,7 +35,7 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-      'app/app.test.js'
+      'src/app.test.js'
     ],
 
 
@@ -43,7 +43,7 @@ module.exports = function(config) {
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     // run the bundle through the webpack and sourcemap plugins
     preprocessors: {
-      'app/app.test.js': [ 'webpack', 'sourcemap' ]
+      'src/app.test.js': [ 'webpack', 'sourcemap' ]
     },
 
 

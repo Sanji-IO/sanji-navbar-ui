@@ -47,6 +47,6 @@
   "license": "MIT",
   "homepage": "https://github.com/Sanji-IO/sanji-navbar-ui",
   "dependencies": {
-    "sanji-core-ui": "~1.17.17"
+    "sanji-core-ui": "~1.17.20"
   }
 }

@@ -6,7 +6,7 @@ import angular from 'angular';
 import {sjCore} from 'sanji-core-ui';
 import {sjNavbar} from './component';
 
-const app = angular.module('webapp', [sjNavbar, sjCore]);
+const app = angular.module('webapp', [sjCore, sjNavbar]);
 app.config(restProvider => {
   restProvider.configure({basePath: '/api/v1'});
 });
