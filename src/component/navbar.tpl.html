@@ -59,7 +59,7 @@
         </md-menu-content>
       </md-menu>
       <md-button class="md-icon-button" aria-label="Control Service"
-      ng-if="::($ctrl.data.config.isShowControlPanel && $ctrl.isAuthorized(['superadmin', 'admin']))"
+      ng-if="::($ctrl.data.config.isShowControlPanel && $ctrl.isAuthorized(['root', 'admin']))"
       ng-click="$ctrl.toggleControlPanelCallback()">
         <md-tooltip>
           <span translate="NAVBAR_TOOLTIP_CONTROL_PANEL"></span>
