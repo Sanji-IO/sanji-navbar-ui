@@ -73,8 +73,8 @@
           <span translate="NAVBAR_TOOLTIP_NOTIFICATION"></span>
         </md-tooltip>
         <ng-md-icon icon="notifications_none"></ng-md-icon>
-        <span class="notification-label" ng-if="0 < $ctrl.unreadCount"
-          ng-bind="9 < $ctrl.unreadCount ? '9+' : $ctrl.unreadCount"></span>
+        <span class="notification-label" ng-if="0 < $ctrl.data.unreadCount"
+          ng-bind="9 < $ctrl.data.unreadCount ? '9+' : $ctrl.data.unreadCount"></span>
       </md-button>
     </div>
   </md-toolbar>

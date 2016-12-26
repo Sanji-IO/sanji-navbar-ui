@@ -7,6 +7,6 @@
   "isShowMenu": true,
   "isShowAccount": true,
   "isShowControlPanel": true,
-  "isShowNotification": true
+  "isShowNotification": true,
+  "unreadCount": 0
 }
-

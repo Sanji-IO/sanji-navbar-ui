@@ -3,20 +3,20 @@ import 'angular-material-icons.css';
 import 'toastr.css';
 import './app.scss';
 import angular from 'angular';
-import {sjCore} from 'sanji-core-ui';
-import {sjNavbar} from './component';
+import { sjCore } from 'sanji-core-ui';
+import { sjNavbar, navbar, lang, UPDATE_NAVBAR_STATUS, UPDATE_NAVBAR_UNREAD_COUNT } from './component';
 
 const app = angular.module('webapp', [sjCore, sjNavbar]);
-app.config(restProvider => {
+app.config((restProvider, reduxHelperProvider) => {
   restProvider.configure({basePath: '/api/v1'});
+  reduxHelperProvider.configure({navbar, lang} , window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
 });
 
 class AppController {
-  constructor(logger) {
+  constructor(logger, $ngRedux, LANG_KEYS) {
     this.logger = logger;
     this.toggleLeft = false;
     this.toggleRight = false;
-    this.unreadCount = 10;
     this.user = {
       name: 'zack yang',
       email: 'zackcf.yang@moxa.com'
@@ -27,6 +27,9 @@ class AppController {
         height: 18
       }
     };
+
+    $ngRedux.dispatch({ type: UPDATE_NAVBAR_STATUS, payload: {config: this.config, lang: LANG_KEYS} });
+    $ngRedux.dispatch({ type: UPDATE_NAVBAR_UNREAD_COUNT, payload: 6 });
   }
 
   onToggleSidebar() {
@@ -50,10 +53,6 @@ class AppController {
 
   logout() {
     this.logger.info('User logout!');
-  }
-
-  changeLang(lang) {
-    this.$translate.use(lang);
   }
 }
 app.run(session => {

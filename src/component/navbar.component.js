@@ -4,13 +4,13 @@ const NavbarComponent = {
   bindings: {
     data: '<',
     user: '<',
-    unreadCount: '<',
     toggleSidebarCallback: '&',
     toggleNotificationCallback: '&',
     toggleControlPanelCallback: '&',
     logoutCallback: '&',
     toProfileCallback: '&',
-    onAuthorized: '&'
+    onAuthorized: '&',
+    onChangeLang: '&'
   },
   templateUrl: 'sanji-navbar.tpl.html',
   controller: NavbarController

@@ -7,18 +7,16 @@ const NavbarContainerComponent = {
     toggleControlPanelCallback: '&onToggleControlPanel',
     logoutCallback: '&onLogout',
     toProfileCallback: '&toProfile',
-    unreadCount: '<',
-    user: '<',
-    options: '<'
+    user: '<'
   },
   template: `<sanji-navbar data="$ctrl.data"
               on-authorized="$ctrl.isAuthorized($event)"
+              on-change-lang="$ctrl.changeLang($event)"
               toggle-sidebar-callback="$ctrl.toggleSidebarCallback()"
               toggle-notification-callback="$ctrl.toggleNotificationCallback()"
               toggle-control-panel-callback="$ctrl.toggleControlPanelCallback()"
               logout-callback="$ctrl.logoutCallback()"
               to-profile-callback="$ctrl.toProfileCallback()"
-              unread-count="$ctrl.unreadCount"
               user="$ctrl.user"></sanji-navbar>`,
   controller: NavbarContainerController
 };

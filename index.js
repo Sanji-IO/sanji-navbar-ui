@@ -1,3 +1,3 @@
-import {sjNavbar} from './src/component';
+import { sjNavbar, navbar, lang, GET_NAVBAR_STATUS, UPDATE_NAVBAR_STATUS, UPDATE_NAVBAR_SELECTED_LANG, GET_NAVBAR_SELECTED_LANG, UPDATE_NAVBAR_UNREAD_COUNT } from './src/component';
 
-export {sjNavbar};
+export { sjNavbar, navbar, lang, GET_NAVBAR_STATUS, UPDATE_NAVBAR_STATUS, UPDATE_NAVBAR_SELECTED_LANG, GET_NAVBAR_SELECTED_LANG, UPDATE_NAVBAR_UNREAD_COUNT };
