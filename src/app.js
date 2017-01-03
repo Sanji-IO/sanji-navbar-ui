@@ -25,7 +25,11 @@ class AppController {
       logo: {
         url: 'https://angularjs.org/img/AngularJS-large.png',
         height: 18
-      }
+      },
+      isShowMenu: true,
+      isShowAccount: true,
+      isShowControlPanel: true,
+      isShowNotification: true
     };
 
     $ngRedux.dispatch({ type: UPDATE_NAVBAR_STATUS, payload: {config: this.config, lang: LANG_KEYS} });
