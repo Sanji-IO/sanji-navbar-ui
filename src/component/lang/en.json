@@ -2,8 +2,8 @@
   "NAVBAR_LOGGER_CHANGE_LANGUAGE": "Change language",
   "NAVBAR_TOOLTIP_MENU": "Menu",
   "NAVBAR_TOOLTIP_I18N": "Language",
-  "NAVBAR_TOOLTIP_NOTIFICATION": "Notice",
+  "NAVBAR_TOOLTIP_NOTIFICATION": "Notices",
   "NAVBAR_TOOLTIP_CONTROL_PANEL": "Control Panel",
   "NAVBAR_PROFILE": "Profile",
-  "NAVBAR_LOGOUT": "Logout"
+  "NAVBAR_LOGOUT": "Log out"
 }
