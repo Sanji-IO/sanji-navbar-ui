@@ -67,7 +67,7 @@
         <ng-md-icon icon="settings"></ng-md-icon>
       </md-button>
       <md-button class="md-icon-button" aria-label="Notification"
-      ng-if="$ctrl.data.config.isShowNotification"
+      ng-if="::($ctrl.data.config.isShowNotification && $ctrl.isAuthorized(['root', 'admin']))"
       ng-click="$ctrl.toggleNotificationCallback()">
         <md-tooltip>
           <span translate="NAVBAR_TOOLTIP_NOTIFICATION"></span>

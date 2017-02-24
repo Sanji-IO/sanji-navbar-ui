@@ -8,8 +8,11 @@ import { sjNavbar, navbar, lang, UPDATE_NAVBAR_STATUS, UPDATE_NAVBAR_UNREAD_COUN
 
 const app = angular.module('webapp', [sjCore, sjNavbar]);
 app.config((restProvider, reduxHelperProvider) => {
-  restProvider.configure({basePath: '/api/v1'});
-  reduxHelperProvider.configure({navbar, lang} , window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
+  restProvider.configure({ basePath: '/api/v1' });
+  reduxHelperProvider.configure(
+    { navbar, lang },
+    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+  );
 });
 
 class AppController {
@@ -32,7 +35,7 @@ class AppController {
       isShowNotification: true
     };
 
-    $ngRedux.dispatch({ type: UPDATE_NAVBAR_STATUS, payload: {config: this.config, lang: LANG_KEYS} });
+    $ngRedux.dispatch({ type: UPDATE_NAVBAR_STATUS, payload: { config: this.config, lang: LANG_KEYS } });
     $ngRedux.dispatch({ type: UPDATE_NAVBAR_UNREAD_COUNT, payload: 6 });
   }
 
