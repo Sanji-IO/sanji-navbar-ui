@@ -2,7 +2,7 @@
   "name": "sanji-navbar-ui",
   "author": "Zack Yang <zack9433@gmail.com> (https://github.com/zack9433)",
   "main": "index",
-  "version": "0.0.0-semantic-released",
+  "version": "0.0.0-development",
   "description": "Sanji Navbar UI",
   "config": {
     "ghooks": {
@@ -32,7 +32,7 @@
     "angular-mocks": "~1.5.0",
     "sanji-openapi-mock": "github:sanji-io/sanji-openapi-mockserver",
     "sanji-common-devs-ui": "~1.0.4",
-    "semantic-release": "^6.3.2"
+    "semantic-release": "^6.3.6"
   },
   "repository": {
     "type": "git",
