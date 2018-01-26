@@ -42,10 +42,12 @@ export const NavbarAction = $translate => {
 
 const initNavbarState = {
   config,
-  lang: [{
-    key: 'en',
-    label: 'English'
-  }]
+  lang: [
+    {
+      key: 'en',
+      label: 'English'
+    }
+  ]
 };
 
 export const navbar = (state = initNavbarState, { type, payload }) => {
@@ -55,7 +57,7 @@ export const navbar = (state = initNavbarState, { type, payload }) => {
     case UPDATE_NAVBAR_STATUS:
       return merge({}, state, payload);
     case UPDATE_NAVBAR_UNREAD_COUNT:
-      return Object.assign({}, state, {unreadCount: payload});
+      return Object.assign({}, state, { unreadCount: payload });
     default:
       return state;
   }

@@ -1,7 +1,7 @@
 const $inject = ['$filter', '$ngRedux', 'auth', 'navbarAction', 'logger'];
 class NavbarContainerController {
   constructor(...injects) {
-    NavbarContainerController.$inject.forEach((item, index) => this[item] = injects[index]);
+    NavbarContainerController.$inject.forEach((item, index) => (this[item] = injects[index]));
   }
 
   $onInit() {
