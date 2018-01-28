@@ -30,10 +30,11 @@
   },
   "devDependencies": {
     "angular-mocks": "~1.6.8",
-    "sanji-openapi-mock": "github:sanji-io/sanji-openapi-mockserver",
     "sanji-common-devs-ui": "^7.0.0",
-    "travis-deploy-once": "^4.3.3",
-    "semantic-release": "^12.2.5"
+    "sanji-core-ui": "^4.0.0",
+    "sanji-openapi-mock": "github:sanji-io/sanji-openapi-mockserver",
+    "semantic-release": "^12.2.5",
+    "travis-deploy-once": "^4.3.3"
   },
   "repository": {
     "type": "git",
@@ -42,10 +43,12 @@
   "bugs": {
     "url": "https://github.com/Sanji-IO/sanji-navbar-ui/issues"
   },
-  "keywords": ["sanji"],
+  "keywords": [
+    "sanji"
+  ],
   "license": "MIT",
   "homepage": "https://github.com/Sanji-IO/sanji-navbar-ui",
-  "dependencies": {
+  "peerDependencies": {
     "sanji-core-ui": "^4.0.0"
   }
 }
