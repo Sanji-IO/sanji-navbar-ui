@@ -24,7 +24,7 @@
       <md-menu ng-if="$ctrl.data.config.isShowAccount"
         md-offset="0 59" md-position-mode="target-right target">
         <md-button class="capitalize md-button" aria-label="Account"
-        ng-click="$mdOpenMenu($event)">
+        ng-click="$mdMenu.open($event)">
           <span ng-bind="$ctrl.user.name"></span>
           <ng-md-icon icon="arrow_drop_down"></ng-md-icon>
         </md-button>
@@ -43,9 +43,27 @@
           </md-menu-item>
         </md-menu-content>
       </md-menu>
-      <md-menu md-offset="0 64" md-position-mode="target-right target">
+
+      <!-- Notification Icon -->
+      <md-menu id="navbar-notification" md-offset="0 60" md-position-mode="target-right target"
+      ng-if="$ctrl.data.config.isShowNotification">
+      <md-button class="md-icon-button" aria-label="Notification"
+        ng-mouseenter="$mdMenu.open($event)">
+        <md-tooltip>
+          <span translate="NAVBAR_TOOLTIP_NOTIFICATION"></span>
+        </md-tooltip>
+        <ng-md-icon icon="notifications_none" class="notification-active"></ng-md-icon>
+      </md-button>
+        <md-menu-content>
+          <notification-container notifications="$ctrl.data.notifications"></notification-container>
+        </md-menu-content>
+      </md-menu>
+      <!-- // End -->
+
+      <!-- Select Language Icon-->
+      <md-menu md-offset="0 60" md-position-mode="target-right target">
         <md-button class="md-icon-button" aria-label="Language"
-        ng-click="$mdOpenMenu($event)">
+        ng-click="$mdMenu.open($event)">
           <md-tooltip>
             <span translate="NAVBAR_TOOLTIP_I18N"></span>
           </md-tooltip>
@@ -58,6 +76,9 @@
           </md-menu-item>
         </md-menu-content>
       </md-menu>
+      <!-- // End -->
+
+      <!-- Control Service Icon-->
       <md-button class="md-icon-button" aria-label="Control Service"
       ng-if="::($ctrl.data.config.isShowControlPanel && $ctrl.isAuthorized(['root', 'admin']))"
       ng-click="$ctrl.toggleControlPanelCallback()">
@@ -66,16 +87,8 @@
         </md-tooltip>
         <ng-md-icon icon="settings"></ng-md-icon>
       </md-button>
-      <md-button class="md-icon-button" aria-label="Notification"
-      ng-if="::($ctrl.data.config.isShowNotification && $ctrl.isAuthorized(['root', 'admin']))"
-      ng-click="$ctrl.toggleNotificationCallback()">
-        <md-tooltip>
-          <span translate="NAVBAR_TOOLTIP_NOTIFICATION"></span>
-        </md-tooltip>
-        <ng-md-icon icon="notifications_none"></ng-md-icon>
-        <span class="notification-label" ng-if="0 < $ctrl.data.unreadCount"
-          ng-bind="9 < $ctrl.data.unreadCount ? '9+' : $ctrl.data.unreadCount"></span>
-      </md-button>
+      <!-- // End -->
+
     </div>
   </md-toolbar>
 </script>

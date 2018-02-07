@@ -4,39 +4,40 @@ import 'toastr.css';
 import './app.scss';
 import angular from 'angular';
 import { sjCore } from 'sanji-core-ui';
-import { sjNavbar, navbar, lang, UPDATE_NAVBAR_STATUS, UPDATE_NAVBAR_UNREAD_COUNT } from './component';
+import { sjNavbar, navbar, lang } from './component';
 
 const app = angular.module('webapp', [sjCore, sjNavbar]);
-app.config((restProvider, reduxHelperProvider) => {
-  restProvider.configure({ basePath: '/api/v1' });
-  reduxHelperProvider.configure(
-    { navbar, lang },
-    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-  );
-});
+app
+  .config((restProvider, reduxHelperProvider) => {
+    restProvider.configure({ basePath: '/api/v1' });
+    reduxHelperProvider.configure(
+      { navbar, lang },
+      window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+    );
+  })
+  .config($translateProvider => {
+    /** This is test example for multiple language */
+    $translateProvider.translations('en', {
+      NOTIFICATIONS_CHANGE_PASSWORD: 'You need to change your password.',
+      NOTIFICATIONS_CHANGE_TOKEN: 'You need to change your default Token.'
+    });
+
+    $translateProvider.translations('zh-tw', {
+      NOTIFICATIONS_CHANGE_PASSWORD: '請修改您的預設密碼',
+      NOTIFICATIONS_CHANGE_TOKEN: '請修改您的預設Token'
+    });
+  });
 
 class AppController {
-  constructor(logger, $ngRedux, LANG_KEYS) {
+  constructor(logger, $ngRedux, LANG_KEYS, navbarAction) {
     this.logger = logger;
+    this.navbarAction = navbarAction;
     this.toggleLeft = false;
     this.toggleRight = false;
     this.user = {
       name: 'zack yang',
       email: 'zackcf.yang@moxa.com'
     };
-    this.config = {
-      logo: {
-        url: 'https://angularjs.org/img/AngularJS-large.png',
-        height: 18
-      },
-      isShowMenu: true,
-      isShowAccount: true,
-      isShowControlPanel: true,
-      isShowNotification: true
-    };
-
-    $ngRedux.dispatch({ type: UPDATE_NAVBAR_STATUS, payload: { config: this.config, lang: LANG_KEYS } });
-    $ngRedux.dispatch({ type: UPDATE_NAVBAR_UNREAD_COUNT, payload: 6 });
   }
 
   onToggleSidebar() {

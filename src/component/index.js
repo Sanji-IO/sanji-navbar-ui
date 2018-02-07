@@ -11,9 +11,12 @@ import {
   UPDATE_NAVBAR_STATUS,
   UPDATE_NAVBAR_SELECTED_LANG,
   GET_NAVBAR_SELECTED_LANG,
-  UPDATE_NAVBAR_UNREAD_COUNT
+  UPDATE_NAVBAR_UNREAD_COUNT,
+  UPDATE_NAVBAR_NOTIFICATIONS,
+  REMOVE_NAVBAR_NOTIFICATIONS
 } from './navbar.state';
 import NavbarContainerComponent from './container.component';
+import NotificationComponent from './notification/notification.component';
 import NavbarComponent from './navbar.component';
 
 const sjNavbar = angular
@@ -21,6 +24,7 @@ const sjNavbar = angular
   .config(i18nConfig)
   .factory('navbarAction', NavbarAction)
   .component('sanjiNavbarContainer', NavbarContainerComponent)
+  .component(NotificationComponent.name, NotificationComponent)
   .component('sanjiNavbar', NavbarComponent).name;
 export {
   sjNavbar,
@@ -30,5 +34,7 @@ export {
   UPDATE_NAVBAR_STATUS,
   UPDATE_NAVBAR_SELECTED_LANG,
   GET_NAVBAR_SELECTED_LANG,
-  UPDATE_NAVBAR_UNREAD_COUNT
+  UPDATE_NAVBAR_UNREAD_COUNT,
+  UPDATE_NAVBAR_NOTIFICATIONS,
+  REMOVE_NAVBAR_NOTIFICATIONS
 };
