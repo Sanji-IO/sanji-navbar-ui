@@ -1,14 +1,12 @@
 <script type="text/ng-template" id="sanji-navbar.notification.tpl.html">
 
+<md-subheader class="md-primary notification-header" translate="NAVBAR_NOTIFICATION_CATEGORY_INFO"></md-subheader>
 <div ng-repeat="notification in $ctrl.notifications track by $index">
-  <div id="notification-category" class="notification-category">
-    <div id="notification-category-info" class="notification-category-info" ng-if="notification.category === 'info'">
-      <p class="title" translate="NAVBAR_NOTIFICATION_CATEGORY_INFO"></p>
-      <md-menu-item class="notification-item" ng-repeat="item in notification.items track by $index">
-        <a href="{{item.url}}" translate={{item.name}}></a>
-      </md-menu-item>
-    </div>
-  </div>
+    <md-menu-item id="{{notification.name}}" class="notification-item"
+      ng-click="$ctrl.show(notification)">
+      <ng-md-icon icon="info_outline"> </ng-md-icon>
+      <span class="item-name" translate="{{notification.name}}"></span>
+    </md-menu-item>
 </div>
 
 </script>

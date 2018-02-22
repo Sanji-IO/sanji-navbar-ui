@@ -5,6 +5,7 @@ import './app.scss';
 import angular from 'angular';
 import { sjCore } from 'sanji-core-ui';
 import { sjNavbar, navbar, lang } from './component';
+import { dialogComponent } from './demo';
 
 const app = angular.module('webapp', [sjCore, sjNavbar]);
 app
@@ -30,6 +31,7 @@ app
 
 class AppController {
   constructor(logger, $ngRedux, LANG_KEYS, navbarAction) {
+    this.$ngRedux = $ngRedux;
     this.logger = logger;
     this.navbarAction = navbarAction;
     this.toggleLeft = false;
@@ -38,6 +40,23 @@ class AppController {
       name: 'zack yang',
       email: 'zackcf.yang@moxa.com'
     };
+  }
+
+  /** Only for Demo or Test */
+  setDemoData() {
+    const notifications = [
+      {
+        name: 'NOTIFICATIONS_CHANGE_PASSWORD',
+        options: dialogComponent
+      },
+      {
+        name: 'NOTIFICATIONS_CHANGE_TOKEN',
+        options: dialogComponent
+      }
+    ];
+    notifications.forEach(notification => {
+      this.$ngRedux.dispatch(this.navbarAction.updateNotifications(notification));
+    });
   }
 
   onToggleSidebar() {

@@ -1,6 +1,4 @@
 $notification-active-color: #f4e842;
-$notification-category-title-color: #7a7a7a;
-$notification-category-color: #333;
 
 .logo-wrap {
   margin-right: 20px;
@@ -8,22 +6,14 @@ $notification-category-color: #333;
 }
 
 .notification-item {
+  font-size: 16px;
   max-width: 300px;
+  cursor: pointer;
 }
 
-.notification-category {
-  font-size: 15px;
-  .title {
-    color: $notification-category-title-color;
-    font-weight: bold;
-    font-size: 18px;
-    margin: 0;
-    padding-left: 16px;
-  }
-  a {
-    text-decoration: none;
-    color: $notification-category-color;
-  }
+.notification-header {
+  padding: 1em;
+  font-size: 16px;
 }
 
 @-webkit-keyframes spaceboots {
