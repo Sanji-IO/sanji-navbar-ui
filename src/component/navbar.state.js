@@ -7,8 +7,6 @@ export const UPDATE_NAVBAR_STATUS = 'UPDATE_NAVBAR_STATUS';
 export const UPDATE_NAVBAR_SELECTED_LANG = 'UPDATE_NAVBAR_SELECTED_LANG';
 export const GET_NAVBAR_SELECTED_LANG = 'GET_NAVBAR_SELECTED_LANG';
 export const UPDATE_NAVBAR_UNREAD_COUNT = 'UPDATE_NAVBAR_UNREAD_COUNT';
-
-/** v2.5 add Notifications feature*/
 export const UPDATE_NAVBAR_NOTIFICATIONS = 'UPDATE_NAVBAR_NOTIFICATIONS';
 export const REMOVE_NAVBAR_NOTIFICATIONS = 'REMOVE_NAVBAR_NOTIFICATIONS';
 
@@ -39,7 +37,7 @@ export const NavbarAction = $translate => {
     return { type: UPDATE_NAVBAR_NOTIFICATIONS, payload: notification };
   };
 
-  const removeMotifications = notification => {
+  const removeNotifications = notification => {
     return { type: REMOVE_NAVBAR_NOTIFICATIONS, payload: notification };
   };
 
@@ -50,7 +48,7 @@ export const NavbarAction = $translate => {
     updateSelectedLang,
     updateUnreadCount,
     updateNotifications,
-    removeMotifications
+    removeNotifications
   };
 };
 
@@ -62,28 +60,28 @@ const initNavbarState = {
       label: 'English'
     }
   ],
-  notifications: [
-    {
-      category: 'info',
-      items: []
-    }
-  ]
+  notifications: []
+};
+
+const isExisting = (array, item) => {
+  return array.find(existingItem => existingItem.name === item.name);
 };
 
 const doUpdateNotifications = (state, type, payload) => {
-  /**
-   * @param { category: string, item: {name: string, url: string } } payload
-   * v2.5
-   * Currently, {category} can only use 'info'. And {name} is a key of i18n. {url} is a AngularJS ui-router to destination.
-   */
   const cloneState = { ...state };
-  const { notifications } = cloneState;
-  const notification = notifications.find(item => item.category === payload.category);
 
   if (type === UPDATE_NAVBAR_NOTIFICATIONS) {
-    notification.items = [...notification.items, payload.item];
+    if (!isExisting(cloneState.notifications, payload)) {
+      cloneState.notifications = [...cloneState.notifications, payload];
+      if (!cloneState.config.isShowNotification) {
+        cloneState.config.isShowNotification = true;
+      }
+    }
   } else {
-    notification.items = notification.items.filter(item => item.name !== payload.item.name);
+    cloneState.notifications = cloneState.notifications.filter(item => item.name !== payload.name);
+    if (cloneState.notifications.length === 0) {
+      cloneState.config.isShowNotification = false;
+    }
   }
   return cloneState;
 };
